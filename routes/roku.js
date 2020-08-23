@@ -9,8 +9,8 @@ module.exports = function(router) {
 	    CLIENT = client;
 	  })
 
-	router.get('/devices/roku', function(req, res, next) {
-		client.apps().then((apps) => (
+	router.get('/roku', function(req, res, next) {
+		CLIENT.apps().then((apps) => (
 			res.render('roku', {address: CLIENT.ip, apps: apps})
 		))
 	})
