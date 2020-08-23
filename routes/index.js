@@ -4,14 +4,16 @@ var execSync = require('child_process').execSync; // this works better for macro
 var util = require('util');
 var express = require('express');
 var router = express.Router();
-var sleep = require('sleep');
+var sleep = require('./sleep');
 
 var devices = config.get('devices');
 var macros = config.get('macros');
 var irsendRoute = '/devices/:device/:directive/:key';
 
 var irsendRouteHandler = function(req, res){
-  var command = util.format('irsend %s %s %s', req.params.directive, devices[req.params.device].device, req.params.key);
+  var directive = req.params.directive;
+  var key = req.params.key;
+  var command = util.format('irsend %s %s %s', directive, devices[req.params.device].device, key);
   var result;
   console.log('executing: ' + command);
   exec(command, (error, stdout, stderr) => {
