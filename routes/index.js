@@ -8,6 +8,8 @@ var sleep = require('./sleep');
 
 var devices = config.get('devices');
 var macros = config.get('macros');
+
+
 var irsendRoute = '/devices/:device/:directive/:key';
 
 var irsendRouteHandler = function(req, res){
@@ -62,5 +64,7 @@ router.post('/macro/:macro', function(req, res, next){
 // not doing .all because keeping security in mind even though this website should be internal
 router.get(irsendRoute, irsendRouteHandler); 
 router.post(irsendRoute, irsendRouteHandler);
+
+require('./roku')(router)
 
 module.exports = router;

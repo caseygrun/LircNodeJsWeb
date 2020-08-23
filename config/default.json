@@ -22,13 +22,13 @@
       { "device": "cable", "directive": "SEND_ONCE", "key": "KEY_POWER" }
     ],
     "game_input":[
-      { "device": "tv", "directive": "SEND_ONCE", "key": "KEY_TV",     "delay": 1000 },
-      { "device": "tv", "directive": "SEND_ONCE", "key": "KEY_SOURCE", "delay": 2000 },
-      { "device": "tv", "directive": "SEND_ONCE", "key": "KEY_SOURCE", "delay": 2000 },
-      { "device": "tv", "directive": "SEND_ONCE", "key": "KEY_SOURCE", "delay": 2000 },
-      { "device": "tv", "directive": "SEND_ONCE", "key": "KEY_SOURCE", "delay": 2000 },
-      { "device": "tv", "directive": "SEND_ONCE", "key": "KEY_SOURCE" },
-      { "device": "tv", "directive": "SEND_ONCE", "key": "KEY_ENTER"}
+      { "method":"ir", "device": "tv", "directive": "SEND_ONCE", "key": "KEY_TV",     "delay": 1000 },
+      { "method":"ir", "device": "tv", "directive": "SEND_ONCE", "key": "KEY_SOURCE", "delay": 2000 },
+      { "method":"ir", "device": "tv", "directive": "SEND_ONCE", "key": "KEY_SOURCE", "delay": 2000 },
+      { "method":"ir", "device": "tv", "directive": "SEND_ONCE", "key": "KEY_SOURCE", "delay": 2000 },
+      { "method":"ir", "device": "tv", "directive": "SEND_ONCE", "key": "KEY_SOURCE", "delay": 2000 },
+      { "method":"ir", "device": "tv", "directive": "SEND_ONCE", "key": "KEY_SOURCE" },
+      { "method":"ir", "device": "tv", "directive": "SEND_ONCE", "key": "KEY_ENTER"}
     ],
     "toon_tv":[
       { "device": "tv", "directive": "SEND_ONCE", "key": "KEY_TV" },
