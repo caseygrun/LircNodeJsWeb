@@ -45,7 +45,7 @@ function postKey(route){
 }
 
 function postVerb(data) {
-  $.post(data.verb, data, function(out) {
+  $.post('/'+data.verb, data, function(out) {
     console.log(out);
   })
 }
