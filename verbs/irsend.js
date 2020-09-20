@@ -2,7 +2,6 @@ var config = require('config');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 var execSync = require('child_process').execSync; // this works better for macro feature
-var util = require('util');
 
 
 async function irsend({directive, device, key}, {devices}) {
