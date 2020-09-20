@@ -1,4 +1,10 @@
 $(document).ready(function(){
+  $('[data-verb]').each(function() {
+    $(this).on('click', function() {
+      postVerb($(this).data())
+    })
+  })
+
   $('div[id^="device-"]').each(function(){
     var id = $(this).attr('id');
     var device = /device-(.*)/.exec(id)[1];
@@ -36,4 +42,10 @@ function postKey(route){
   $.post(route, function(data){
     console.log(data); 
   });
+}
+
+function postVerb(data) {
+  $.post(data.verb, data, function(out) {
+    console.log(out);
+  })
 }

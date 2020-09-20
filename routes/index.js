@@ -27,6 +27,8 @@ var irsendRouteHandler = function(req, res){
 };
 router.get(irsendRoute, irsendRouteHandler); 
 router.post(irsendRoute, irsendRouteHandler);
+router.post('/irsend', irsendRouteHandler);
+
 
 router.post('/macro/:macro', async function(req, res, next){
   var macroName = req.params.macro;
