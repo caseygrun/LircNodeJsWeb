@@ -24,7 +24,7 @@ async function irsend({directive, device, key}, {devices}) {
   var command = util.format('irsend %s %s %s', directive, lirc_device, key);
   console.log('executing: ' + command);
 
-  return exec(command).then({stdout, stderr}) => {
+  return exec(command).then(({stdout, stderr}) => {
     var result = stdout.trim();
     if(!result){
       result = "success";
