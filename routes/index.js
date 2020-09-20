@@ -20,7 +20,8 @@ var irsendRouteHandler = function(req, res){
   var directive = req.params.directive;
   var key = req.params.key;
   var device = req.params.device;
-  irsend({directive, device, key}, {devices}).then((err, result) => {
+  console.log({directive, key, device})
+  verbs.irsend({directive, device, key}, {devices}).then((err, result) => {
     res.json({result: result});
   });
 };
