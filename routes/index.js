@@ -16,14 +16,18 @@ var verbs = require('../verbs');
 
 var irsendRoute = '/devices/:device/:directive/:key';
 
-var irsendRouteHandler = function(req, res){
-  var directive = req.params.directive;
-  var key = req.params.key;
-  var device = req.params.device;
+var irsendRouteHandler = function(req, res, next){
+  const directive = req.params.directive || req.body.directive;
+  const key = req.params.key || req.body.key;
+  const device = req.params.device || req.body.device;
+  
   console.log({directive, key, device})
-  verbs.irsend({directive, device, key}, {devices}).then((err, result) => {
-    res.json({result: result});
-  });
+
+  verbs.irsend({directive, device, key}, {devices})
+    .then((err, result) => {
+      res.json({result: result});
+    })
+    .catch(next);
 };
 router.get(irsendRoute, irsendRouteHandler); 
 router.post(irsendRoute, irsendRouteHandler);
