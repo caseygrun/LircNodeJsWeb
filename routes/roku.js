@@ -1,6 +1,6 @@
 const { RokuClient, Keys } = require('roku-client');
 
-module.exports = function(router) {
+module.exports = function(router, {verbs, devices}) {
 	var CLIENT = null;
 
 	RokuClient.discover(/* timeout, defaults to 10 seconds */)
@@ -13,5 +13,11 @@ module.exports = function(router) {
 		CLIENT.apps().then((apps) => (
 			res.render('roku', {address: CLIENT.ip, apps: apps})
 		))
+	})
+
+	router.post('/roku', function(req, res, next) {
+		verbs.roku(req.body, {})
+			.then((result) => res.json({result:result}))
+			.catch(next);
 	})
 }

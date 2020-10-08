@@ -1,4 +1,5 @@
 module.exports = {
 	...require('./irsend'), 
-	...require('./macro')
+	...require('./macro'),
+	...require('./roku')
 }

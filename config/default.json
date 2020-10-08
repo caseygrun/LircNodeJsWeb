@@ -1,9 +1,10 @@
 {
   "devices":{
     "tv":{
-      "title": "TV - Samsung",
-      "label": "TV",
-      "device": "SamsungTv"
+      "title": "TV",
+      "label": "Roku TV",
+      "device": "roku",
+      "method": "roku"
     },
     "hts":{
       "title": "LG HTS",
@@ -17,24 +18,16 @@
     }
   },
   "macros":{
-    "watch_tv": [
-      { "device": "tv",    "directive": "SEND_ONCE", "key": "KEY_POWER" },
-      { "device": "cable", "directive": "SEND_ONCE", "key": "KEY_POWER" }
-    ],
-    "game_input":[
-      { "method":"ir", "device": "tv", "directive": "SEND_ONCE", "key": "KEY_TV",     "delay": 1000 },
-      { "method":"ir", "device": "tv", "directive": "SEND_ONCE", "key": "KEY_SOURCE", "delay": 2000 },
-      { "method":"ir", "device": "tv", "directive": "SEND_ONCE", "key": "KEY_SOURCE", "delay": 2000 },
-      { "method":"ir", "device": "tv", "directive": "SEND_ONCE", "key": "KEY_SOURCE", "delay": 2000 },
-      { "method":"ir", "device": "tv", "directive": "SEND_ONCE", "key": "KEY_SOURCE", "delay": 2000 },
-      { "method":"ir", "device": "tv", "directive": "SEND_ONCE", "key": "KEY_SOURCE" },
+    "hts_hdmi":[
+      { "method":"ir", "device": "hts", "directive": "SEND_ONCE", "key": "KEY_OPTICAL",   "delay": 100 },
+      { "method":"ir", "device": "hts", "directive": "SEND_ONCE", "key": "KEY_INPUT",     "delay": 100 },
+      { "method":"ir", "device": "hts", "directive": "SEND_ONCE", "key": "KEY_INPUT",     "delay": 100 },
+      { "method":"ir", "device": "hts", "directive": "SEND_ONCE", "key": "KEY_INPUT",     "delay": 100 },
+      { "method":"ir", "device": "hts", "directive": "SEND_ONCE", "key": "KEY_INPUT",     "delay": 100 },
+      { "method":"ir", "device": "hts", "directive": "SEND_ONCE", "key": "KEY_INPUT",     "delay": 100 },
+      { "method":"ir", "device": "hts", "directive": "SEND_ONCE", "key": "KEY_INPUT",     "delay": 100 },
+      { "method":"ir", "device": "hts", "directive": "SEND_ONCE", "key": "KEY_INPUT",     "delay": 100 },
       { "method":"ir", "device": "tv", "directive": "SEND_ONCE", "key": "KEY_ENTER"}
-    ],
-    "toon_tv":[
-      { "device": "tv", "directive": "SEND_ONCE", "key": "KEY_TV" },
-      { "device": "tv", "directive": "SEND_ONCE", "key": "KEY_3" },
-      { "device": "tv", "directive": "SEND_ONCE", "key": "KEY_5" },
-      { "device": "tv", "directive": "SEND_ONCE", "key": "KEY_ENTER" }
     ]
   }
 }

@@ -20,7 +20,7 @@ var irsendRouteHandler = function(req, res, next){
   const directive = req.params.directive || req.body.directive;
   const key = req.params.key || req.body.key;
   const device = req.params.device || req.body.device;
-  
+
   console.log({directive, key, device})
 
   verbs.irsend({directive, device, key}, {devices})
@@ -36,7 +36,7 @@ router.post('/irsend', irsendRouteHandler);
 
 router.post('/macro/:macro', async function(req, res, next){
   var macroName = req.params.macro;
-  var result = await macro({name: macroName}, {macros, devices, verbs});
+  var result = await verbs.macro({name: macroName}, {macros, devices, verbs});
   res.json({result: result});
 });
 
@@ -48,7 +48,7 @@ router.get('/', function(req, res, next) {
   res.render(key, { title: devices[key].title, device: key });
 });
 
-require('./roku')(router)
+require('./roku')(router, { verbs, devices })
 
 router.get('/devices/:device', function(req, res, next) {
   var device = req.params.device;

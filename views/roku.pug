@@ -2,7 +2,42 @@ extends layout
 
 block deviceKeys
   div.container
+  	div.row
+  		div(data-verb="roku" data-directive="key" data-key="POWER").col-xs-3.btn.btn-default.text-center 
+        	span.glyphicon.glyphicon-power
+  		div(data-verb="roku" data-directive="key" data-key="BACK").col-xs-3.btn.btn-default.text-center 
+        	span.glyphicon.glyphicon-arrow-left
+        div(data-verb="roku" data-directive="key" data-key="HOME").col-xs-3.btn.btn-default.text-center 
+        	span.glyphicon.glyphicon-home
+	div.row
+		div.col-xs-3
+  		div(data-verb="roku" data-directive="key" data-key="UP").col-xs-3.btn.btn-default.text-center 
+        	span.glyphicon.glyphicon-chevron-up
+		div.col-xs-3
+	div.row
+  		div(data-verb="roku" data-directive="key" data-key="LEFT").col-xs-3.btn.btn-default.text-center 
+        	span.glyphicon.glyphicon-chevron-left
+        div(data-verb="roku" data-directive="key" data-key="OK").col-xs-3.btn.btn-default.text-center OK
+  		div(data-verb="roku" data-directive="key" data-key="RIGHT").col-xs-3.btn.btn-default.text-center 
+        	span.glyphicon.glyphicon-chevron-right
+	div.row
+		div.col-xs-3
+  		div(data-verb="roku" data-directive="key" data-key="DOWN").col-xs-3.btn.btn-default.text-center 
+        	span.glyphicon.glyphicon-chevron-down
+		div.col-xs-3
+	div.row
+  		div(data-verb="roku" data-directive="key" data-key="INSTANT_REPLAY").col-xs-3.btn.btn-default.text-center 
+        	span.glyphicon.glyphicon-repeat
+  		div(data-verb="roku" data-directive="key" data-key="STAR").col-xs-3.btn.btn-default.text-center *
+	div.row
+  		div(data-verb="roku" data-directive="key" data-key="REVERSE").col-xs-3.btn.btn-default.text-center 
+        	span.glyphicon.glyphicon-rewind
+        div(data-verb="roku" data-directive="key" data-key="PLAY").col-xs-3.btn.btn-default.text-center
+        	span.glyphicon.glyphicon-play
+        	span.glyphicon.glyphicon-pause
+  		div(data-verb="roku" data-directive="key" data-key="FORWARD").col-xs-3.btn.btn-default.text-center 
+  			span.glyphicon.glyphicon-forward
     div.row
       each app in apps
-          div.col-xs-3.btn
-            img(src=address+'/query/icon/'+app.id)
+          div.col-xs-3.btn.btn-default
+            img(src=address+'/query/icon/'+app.id, style='width:100%;')
