@@ -19,14 +19,8 @@
   },
   "macros":{
     "hts_hdmi":[
-      { "method":"ir", "device": "hts", "directive": "SEND_ONCE", "key": "KEY_OPTICAL",   "delay": 100 },
       { "method":"ir", "device": "hts", "directive": "SEND_ONCE", "key": "KEY_INPUT",     "delay": 100 },
-      { "method":"ir", "device": "hts", "directive": "SEND_ONCE", "key": "KEY_INPUT",     "delay": 100 },
-      { "method":"ir", "device": "hts", "directive": "SEND_ONCE", "key": "KEY_INPUT",     "delay": 100 },
-      { "method":"ir", "device": "hts", "directive": "SEND_ONCE", "key": "KEY_INPUT",     "delay": 100 },
-      { "method":"ir", "device": "hts", "directive": "SEND_ONCE", "key": "KEY_INPUT",     "delay": 100 },
-      { "method":"ir", "device": "hts", "directive": "SEND_ONCE", "key": "KEY_INPUT",     "delay": 100 },
-      { "method":"ir", "device": "hts", "directive": "SEND_ONCE", "key": "KEY_INPUT",     "delay": 100 },
+      { "method":"ir", "device": "hts", "directive": "SEND_ONCE", "key": "KEY_4",     "delay": 100 },
       { "method":"ir", "device": "tv", "directive": "SEND_ONCE", "key": "KEY_ENTER"}
     ]
   }

@@ -49,3 +49,13 @@ function postVerb(data) {
     console.log(out);
   })
 }
+
+function rokuText(text) {
+  var data = {
+    'directive': 'text',
+    'text': text
+  }
+  $.post('/roku', data, function(out) {
+    console.log(out);
+  })
+}
