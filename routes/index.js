@@ -34,7 +34,7 @@ router.post(irsendRoute, irsendRouteHandler);
 router.post('/irsend', irsendRouteHandler);
 
 
-router.post('/macro/:macro', async function(req, res, next){
+router.post('/macro', async function(req, res, next){
   var macroName = req.params.macro;
   var result = await verbs.macro({name: macroName}, {macros, devices, verbs});
   res.json({result: result});
